@@ -1,16 +1,21 @@
 var people = ['Greg', 'Mary', 'Devon', 'James'];
 
 // 1. Using a loop, iterate through this array and console.log all of the people.
-people.forEach(function(item,array){
-    console.log(item);
-});
+// people.forEach(function(item,array){
+//     console.log(item);
+// });
+people.forEach((item)=> console.log(item));
 // 2. Write the command to remove "Greg" from the array.
-var GregBye = people.indexOf('Greg');
-var removeGreg = people.splice(GregBye,1);
+// var GregBye = people.indexOf('Greg');
+// var removeGreg = people.splice(GregBye,1);
+// console.log(people);
+var removeGreg = people.shift();
 console.log(people);
 // 3. Write the command to remove "James" from the array.
-var JamesBye = people.indexOf('James');
-var removeJames = people.splice(JamesBye,1);
+// var JamesBye = people.indexOf('James');
+// var removeJames = people.splice(JamesBye,1);
+// console.log(people);
+var removeJames = people.pop();
 console.log(people);
 // 4. Write the command to add "Matt" to the front of the array.
 var addFirstMatt = people.unshift('Matt');
@@ -19,18 +24,24 @@ console.log(people);
 var newLenthTony = people.push('Tony');
 console.log(people);
 // 6. Using a loop, iterate through this array and after console.log-ing "Mary", exit from the loop.
-var MaryBreak = false;
-people.forEach(function(item,array){
-    if (MaryBreak === true) {
-        return false;
-    };
+// var MaryBreak = false;
+// people.forEach(function(item,array){
+//     if (MaryBreak === true) {
+//         return false;
+//     };
 
-    if (item === 'Mary') {
-        MaryBreak = true;
-    };
+//     if (item === 'Mary') {
+//         MaryBreak = true;
+//     };
     
-    console.log(item);
-});
+//     console.log(item);
+// });
+for (let i = 0; i < people.length; i++) {
+    console.log(people[i])
+    if (people[i] === 'Mary'){
+        break;
+    }
+}
 // 7. Write the command to make a copy of the array using slice. The copy should NOT include "Mary" or "Matt".
 var newPeople = people.slice(1,4);
 console.log(newPeople);
